@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>SVG Editor</title>
+    <style type="text/css">
+        @import url("svg-editor.css");
+    </style>
+    <script src="svg-editor.js"></script>
+</head>
+
+<body>
+    <h1>
+        <div style="display:flex; flex-direction: row; justify-content: left; align-items: center">
+            <b>SVG EDITOR</b>
+            <button id="btnLine"><img src="media/line.png" width="30" height="30"></button>
+            <button id="btnRect"><img src="media/rectangle.png" width="30" height="30"></button>
+            <button id="btnEllipse"><img src="media/ellipse.png" width="30" height="30"></button>
+            <label id="colorlabel" for="color">Choose line color:</label>
+            <input name="color" type="color" id="colorpicker" width="30" height="30" value="#000000">
+            <label id="widthlabel" for="width">Choose line thickness:</label>
+            <select name="width" id="widthpicker">
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="8">8</option>
+                <option value="16">16</option>
+            </select>
+            <label id="bgcolorlabel" for="bgcolor">Choose background color:</label>
+            <input name="bgcolor" type="color" id="bgcolorpicker" width="30" height="30" value="#eaeaea">
+            <div id="tips" style="display:flex; flex-direction: column; justify-content: left; align-items: left">
+                <small>Tip: right click to select element</small>
+                <small>Tip: press 'delete' to delete selected element</small>
+                <small>Tip: click and drag on a selected element to move it around</small>
+                <small>Tip: you can modify the color and thickness of a selected line</small>
+            </div>
+        </div>
+    </h1>
+    <svg id="editor">
+        <g id="desen"></g>
+        <rect id="rect_elem" style="display:none" x="200" y="250" width="180" height="150"></rect>
+        <line id="line_elem" style="display:none" x1="100" y1="100" x2="200" y2="200"></line>
+        <ellipse id="ellipse_elem" style="display:none" cx="150" cy="150" rx="80" ry="100"></ellipse>
+    </svg>
+</body>
+
+</html>
